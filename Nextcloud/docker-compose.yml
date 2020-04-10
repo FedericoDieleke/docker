@@ -10,7 +10,7 @@ services:
     command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
     restart: always
     volumes:
-      - db:/media/vault/nextcloud/db
+      - /media/vault/nextcloud/db:/db
     environment:
       - MYSQL_ROOT_PASSWORD=nextcloud
       - MYSQL_PASSWORD=nextcloud
@@ -24,5 +24,5 @@ services:
     links:
       - db
     volumes:
-      - nextcloud:/media/vault/nextcloud/data
+      - /media/vault/nextcloud/data:/data
     restart: always
